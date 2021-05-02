@@ -1,0 +1,25 @@
+
+
+.produit{
+    display: flex;
+    flex-wrap: wrap;
+    border : 1px solid black;
+}
+.image_produit{
+    width: 400px; 
+}
+
+.teddy{
+    width: 380px;
+    object-fit: cover; 
+    overflow: hidden;
+    border-right: 1px solid black;
+    
+}
+
+.description_produit{
+   
+    padding-left: 10px;
+    
+    
+}
