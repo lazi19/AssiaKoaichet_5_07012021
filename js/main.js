@@ -23,7 +23,8 @@ fetch("http://localhost:3000/api/teddies")
             <div class="div_img"><img id="img"  class="img" src="${element.imageUrl}" alt="ours" ></div>
             <h2 id ="name" class="name">${element.name}</h2>  
             <p id ="description" class="description" >${element.price + " €"}</p>            
-            <a href={"produits.html?id=${element._id} class="plus_de_detail"}>Pour plus de détails</a>
+            <a href={"produits.html?id=${element._id} onclick="myFunction() class="plus_de_detail"}>Pour plus de détails</a>
+            
             </div> `;
             
 console.log(divProduitListe)
