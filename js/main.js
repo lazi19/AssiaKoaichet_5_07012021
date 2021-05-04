@@ -10,6 +10,7 @@ fetch("http://localhost:3000/api/teddies")
         return response.json();
         
     })
+    
     .then(function(articles) {
 
       console.log(articles);
