@@ -1,123 +1,108 @@
+
+// ******************************** le Local Storage ******************************* 
+// **** Stocker la récuperation des valeurs du formulaire dans le local storage **** 
+//  creation de la fonction ajouterAuPanier 
+
+ const ajouterAuPanier = (article) => {
+
+
+    console.log('Ajouter au Panier')
+    console.log(JSON.parse(localStorage.getItem("basket"))) // JSON.parse c'est pour convertir les données au format JSON qui sont dans le local storage en objet JavaScript
+
+    const currentBasket = JSON.parse(localStorage.getItem("basket")) || [] ;
+    // console.log('currentBasket')
+    
+    
+    const alreadyInBasket = currentBasket.find(element => element.id === article._id);
+    // console.log(alreadyInBasket)
+
+        if (alreadyInBasket){
+          alreadyInBasket.quantity++;
+        } else {
+          currentBasket.push({
+            id: article._id,
+            name: article.name,
+            quantity: 1
+          })
+        }
+};
+
+
+ 
 /**
- * Récupération  de l'id du produit à afficher dans l'url (récupération de la chaîne de requete dans l'URL)
+ * localStorage.getItem("basket", JSON.stringify(currentBasket));
+  console.log('==== LOCAL STORAGE BASKET====')
+  console.log(JSON.parse(localStorage.getItem("basket")))
+
  */
-    const queryString_url_id = window.location.search;
-    console.log(queryString_url_id);
+
+
+
+/*
+  Récupération  de l'id du produit à afficher dans l'url (récupération de la chaîne de requete dans l'URL)
+ */
+const queryString_url_id = window.location.search;
+console.log(queryString_url_id);
 
 //  extraire l' id methode 1
 //const leId = queryString_url_id.slice(4);
 //console.log(leId);
 
-//  extraire l' id methode 2 on utilise un constructeur 
+//  extraire l' id methode 2 on utilise un constructeur
 
- const urlSearchParams = new URLSearchParams(queryString_url_id);
- console.log(urlSearchParams);
+const urlSearchParams = new URLSearchParams(queryString_url_id);
+console.log(urlSearchParams);
 
 const id = urlSearchParams.get("id");
 console.log(id);
 
-
-
 //  affichage du produit (de l'objet) qui a été selectionné par l'id
-fetch(`http://localhost:3000/api/teddies/${id}`
+
+fetch(`http://localhost:3000/api/teddies/${id}`)
+  .then(function (response) {
+    console.log("FIN DE LA REQUETE");
+
+    console.log(response);
+    return response.json();
+  })
+
+  .then(function (article) {
+    console.log(article);
+
+    //  Sélection des elements  ou je vais (injecter)  changer leur  code HTML
+
+    document.getElementById("img").src = article.imageUrl;
+    document.getElementById("nom").innerText = article.name;
+    description = document.getElementById("description").innerText = article.description;
+
+    let choixCouleur = document.querySelector("select");
+       
+    //   article.colors.forEach((color) => {
+    //   choixCouleur.innerHTML += `<option>${color}</option>`;
+    // })
+   
+     for(let color of article.colors ) {     
+      choixCouleur.innerHTML +=`<option>${color}</option>`;
+      
+     }
+
+    prix = document.getElementById("prix").innerText = "Prix : " + article.price / 100 + " € ";
+
+    // ecouter l'evenement du clic sur le bouton Ajouter au panier
+
+    document.getElementById("btn_panier").onclick = ()=> ajouterAuPanier(article); // fonction fléchée
+
+    // document.getElementById("btn_panier").onclick = function (){ ajouterAuPanier(article) }; // la fonction normale 
+    
+  })
+
+  .catch(function (err) {
+    alert(err);
+  });
 
 
-.then(function(response) {
-        console.log("FIN DE LA REQUETE");
-        
-        console.log(response);
-          return response.json();
-          
-      })
+  
 
-.then(function(article) {                 
-                  
-                console.log(article);
-
-//  Sélection des elements  ou je vais changer leur  code HTML
+  
 
 
-        article.forEach((element) => {
-                                  
-          var img = document.getElementById("img").innerHTML = element.imageUrl;
-          var nom = document.getElementById("nom").innerText = element.name;
-          var description = document.getElementById("description").innerText = element.description;
-          var couleurs = document.getElementById("couleurs").innerText = element.colors;
-          var prix = document.getElementById("prix").innerText += 'Prix :' + element.price +' € ' ;
-
-          console.log(img); 
-
-        } )
-              
-        .catch(function(err) {
-                alert(err)      
-        });    
-
-
-          // fetch("http://localhost:3000/api/teddies")
-          //     .then(function(response) {
-          //       console.log("FIN DE LA REQUETE");
-                
-          //       console.log(response);
-          //         return response.json();
-                  
-          //     })
-
-          //     .then(function(article) {
-                 
-                  
-          //         console.log(article);
-
-          //         // divProduit = article[i];
-          //         // console.log(divProduit);
-          //         const img = document.getElementById("img")
-          //         const nom = document.getElementById("nom")
-          //         const description = document.getElementById("description")
-          //         const prix = document.getElementById("prix")
-          //         const id = ""
-
-          //     for (let i in article) {
-
-          //           // divProduit.src = article[i]._id
-          //           // const id = divProduit.src
-          //           // return id ;
-                      
-                
-          //           const img = document.getElementById("img").innerHTML = `<img id="img" src="http://localhost:3000/images/${teddy_(i+1).jpg}" alt="peluche ours" class="teddy"></img>`;
-          //           const nom = document.getElementById("nom").innerText = article.name[i];
-          //           const description = document.getElementById("description").innerText = article.description[i];
-          //           const couleurs = document.getElementById("couleurs").innerText = article.colors[i];
-          //           const prix = document.getElementById("prix").innerText += 'Prix :' + article.price[i] +' € ' ;
-                  
-          //     }
-              
-          //     // console.log( article[i]);
-
-          //             leId ="5be9c8541c9d440000665243" ; // je n'ai pas pu récupérer id 
-
-          //       switch (leId) {
-          //       case leId === "5be9c8541c9d440000665243" :
-          //       article[0];
-          //       break;
-          //       case leId === "5beaa8bf1c9d440000a57d94" :
-          //       (article[1]);
-          //       break;
-          //       case leId === "5beaaa8f1c9d440000a57d95" :
-          //       (article[2]);
-          //       break;
-          //       case leId === "5beaabe91c9d440000a57d96" :
-          //       (article[3]);
-          //       break;
-          //       case leId === "5beaacd41c9d440000a57d97": 
-          //       (article[4])
-          //       break;
-          //       default:
-          //       console.log("cet article n'existe pas");
-          //       }
-                  
-          //     })
-
-          //     .catch(function(err) {
-          //       alert(err)      
-          //     })
-          // 

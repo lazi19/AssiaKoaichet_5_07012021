@@ -18,7 +18,7 @@
 
       <nav class="">
               <ul>
-                  <li ><a class = "" href=""> Accueil </a></li>
+                  <li ><a class = "" href="index.html"> Accueil </a></li>
                   <li><a class = "activite" href = ""> Contact</a></li>
                   <li><a class = "activite" href = ""> Panier</a></li>
                 
@@ -46,11 +46,9 @@
                         <form>
                             <div>
                             <select id="couleurs">
-                                <option value="" >Choisissez une couleur</option>
-                                <option value="Tan">Tan</option>
-                                <option value="Chocolate">Chocolate</option>
-                                <option value="Black">Black</option>
-                                <option value="White">White</option>
+                                <option value="choix" >Choisissez une couleur</option>
+                                <!-- <option id="couleur" value="color"></option> -->
+                                
                             </select>  
                             </div>
                         </form>
@@ -59,15 +57,17 @@
                         <p id="id"></p>
 
                         <button type="submit" id="btn_panier" name="btn_panier" >
-                            <span>Ajouter au panier</span>
+                            <span>Ajouter au panier <i class="fas fa-shopping-cart"></i></span> 
                         </button>
+                        <div id="basket"></div>
 
                 </div>
         </div>
         
 
     </main>
-    
+    <script src="https://kit.fontawesome.com/1d97153c91.js" crossorigin="anonymous"></script>
+
     <script src="js\produits.js"></script>   
     <!-- <script src="js\main.js"></script> -->
 </body>
