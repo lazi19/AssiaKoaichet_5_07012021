@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\panier.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+
+    <title>Bienvenue chez ORINOCO</title>
+    <meta name="description" content="ORINOCO est un site de vente en ligne d'ours en peluche, de meubles en bois et de caméras anciennes">
+
+</head>
+<body>
+    <header>
+        <h1>
+            <div class="logo">
+                <img class="logo" src="img\logoOrinoco.png" alt="Logo de orinoco " />
+            </div>
+        </h1>        
+
+      <nav class="">
+              <ul></ul>
+                  <li><a class = "" href="index.html"> Accueil </a></li>
+                  <li><a class = "activite" href = ""> Contact</a></li>
+              </ul>
+      </nav>
+
+    </header>
+
+    <main>
+        
+        <div id="basket-resume">
+			<p id="panierVide"></p>
+            <!-- <div class="blocProduit">
+                <img src="" alt="">
+                <p id="nom"></p>
+                <p id="quantite">Quantité : </p>
+                <p id="couleur">Couleur :</p>
+                <p id="prix">Prix :</p>
+                <button>suprimer</button>
+                <p id="prixTotal">Total de votre panier : </p>
+                <button>Continuer mes achats</button>
+            </div> -->
+
+		</div>
+        <a href="index.html"><button> CONTINUER MES ACHATS </button></a> 
+
+      
+
+        <form method="post" name="form-panier">
+            <fieldset>
+                <legend>Civilité</legend>
+
+                <div class="formNom">
+                     <label for="nom">Nom :</label>
+                     <input type="text" id="nom" name="nom" required><br><br>
+
+                </div>
+               
+                <div class="formPrenom">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>                
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Coordonnées</legend>
+
+                <div class="formMail">
+                     <label for="mail">E-mail :</label>
+                     <input type="email" id="mail" name="mail" required><br><br>
+                </div>
+               
+                <div class="formAdresse">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="adresse" required><br><br>
+                </div> 
+                <div class="formVille">
+                    <label for="ville">Ville :</label>
+                    <input type="text" id="ville" class="form-control input-control" required name="ville">
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Je valide mon panier et mes informations" class="" id="envoiPost">
+
+        </form>
+
+
+		
+
+    </main>
+    <footer>
+        <p>Orinoco -  Site e-commerce - P5 openclassrooms</p>
+    </footer>
+    
+    <script src="js\panier.js "></script> 
+    <!-- <script src="js\produits.js"></script>    -->
+</body>
+</html>
