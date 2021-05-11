@@ -100,6 +100,8 @@ let produitEnregistreDansLocalStorage = JSON.parse(localStorage.getItem("produit
 
 console.log(produitEnregistreDansLocalStorage);
 
+/*
+
 // fonction fenetre pop up
 const popupConfirmaion = () => {
     if(window.confirm(`${article.name} couleur : ${'couleur'} a bienété ajouté au panier 
@@ -110,6 +112,8 @@ Cliquez sur  OK pour consulter le panier  ou ANNULER pour revenir à l'accueil`)
       window.location.href = "index.html";
      }
 }
+*/
+
 
     quantity = 1;
 
@@ -120,14 +124,14 @@ Cliquez sur  OK pour consulter le panier  ou ANNULER pour revenir à l'accueil`)
       localStorage.setItem("produit", JSON.stringify(produitEnregistreDansLocalStorage));
       console.log(produitEnregistreDansLocalStorage);
       console.log("helloIf");
-      popupConfirmaion();
+      // popupConfirmaion();
     }else{
       produitEnregistreDansLocalStorage = [];
       produitEnregistreDansLocalStorage.push(produitSelect)
       console.log(produitEnregistreDansLocalStorage);
       localStorage.setItem("produit", JSON.stringify(produitEnregistreDansLocalStorage)); // setItem pour envoyer 'produitEnregistreDansLocalStorage' dans le local storage en lui attribuant la key produit
       console.log("helloElse");
-      popupConfirmaion();
+      // popupConfirmaion();
     }
 
   } ;

@@ -24,10 +24,9 @@
             // color: article.colors.selected,
             //  color: couleurSelect, 
             price: article.price,
-            quantity: 1,
-
-                      
+            quantity: 1,                      
            message : 'helloIf'
+           
           })
 
         } else {
