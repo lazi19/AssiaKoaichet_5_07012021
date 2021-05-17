@@ -53,17 +53,16 @@
             <fieldset>
                 <legend>Civilité</legend>
 
-                <div class="formNom">
-                     <label for="nom">Nom :</label>
-                     <input type="text" id="nom" name="nom" required><br><br>
-
-                </div>
-               
                 <div class="formPrenom">
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                </div>                
+                    <input type="text" id="prenom" name="prenom" value="" required placeholder="De 3 à 20 caractères"><br><br>
+                </div>   
 
+                <div class="formNom">
+                    <label for="nomUtilisateur">Nom :</label>
+                    <input type="text" id="nomUtilisateur" name="nomUtilisateur" value="" required placeholder="De 3 à 20 caractères">
+                </div> 
+                
             </fieldset>
 
             <fieldset>
@@ -71,7 +70,7 @@
 
                 <div class="formMail">
                      <label for="mail">E-mail :</label>
-                     <input type="email" id="mail" name="mail" required><br><br>
+                     <input type="email" id="mail" name="mail" required  placeholder="mail@serveur.com"><br><br>
                 </div>
                
                 <div class="formAdresse">
@@ -80,11 +79,16 @@
                 </div> 
                 <div class="formVille">
                     <label for="ville">Ville :</label>
-                    <input type="text" id="ville" class="form-control input-control" required name="ville">
+                    <input type="text" id="ville" class="form-control input-control" required name="ville"><br><br>
+                </div>
+
+                <div class="formCodePostal">
+                    <label for="codePostal">Code Postal :</label>
+                    <input type="text" id="codePostal" class="form-control input-control" required name="codePostal">
                 </div>
             </fieldset>
 
-            <input type="submit" value="Je valide mon panier et mes informations" class="" id="envoiPost">
+            <input type="submit" value="Je valide mon panier et mes informations" class="" id="envoiFormulaire">
 
         </form>
 
