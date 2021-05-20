@@ -24,6 +24,7 @@
               <ul></ul>
                   <li><a class = "" href="index.html"> Accueil </a></li>
                   <li><a class = "activite" href = ""> Contact</a></li>
+                  <li><a class = "activite" href = "panier.html"> Panier</a></li>
               </ul>
       </nav>
 
@@ -49,7 +50,7 @@
 
       
 
-        <form method="post" name="form-panier">
+       <form onsubmit="return false" name="form-panier">  <!-- le onsubmit bloque le rechargement de la page lors de l'envoie du form -->
             <fieldset>
                 <legend>Civilité</legend>
 
@@ -82,10 +83,7 @@
                     <input type="text" id="ville" class="form-control input-control" required name="ville"><br><br>
                 </div>
 
-                <div class="formCodePostal">
-                    <label for="codePostal">Code Postal :</label>
-                    <input type="text" id="codePostal" class="form-control input-control" required name="codePostal">
-                </div>
+                
             </fieldset>
 
             <input type="submit" value="Je valide mon panier et mes informations" class="" id="envoiFormulaire">
