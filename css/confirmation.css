@@ -61,28 +61,21 @@
   
   
   
-  /*  fin de  style du corp de la page */ 
+  /*  fin de  style du corp de la page */
+  .confirmation{
+      text-align: center;
+      padding-bottom: 250px;
+  }
+  .confirmation_titre{
+    font-family: "Amatic SC", cursive;
+     margin: 50px 0; 
+  }
+  .confirmation p{
+    margin: 10px 0; 
+ }
+ footer{
+    background: #F3E9F1;
+    padding: 20px;
+    text-align: center;
+ }
 
-.produit{
-    display: flex;
-    flex-wrap: wrap;
-    border : 1px solid black;
-}
-.image_produit{
-    width: 400px; 
-}
-
-.teddy{
-    width: 380px;
-    object-fit: cover; 
-    overflow: hidden;
-    border-right: 1px solid black;
-    
-}
-
-.description_produit{
-   
-    padding-left: 10px;
-    
-    
-}

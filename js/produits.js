@@ -14,7 +14,8 @@
 
     console.log(currentBasket); 
     
-    const alreadyInBasket = currentBasket.find(element => (element.id === article._id && element.color === selectedColor));
+    const alreadyInBasket = currentBasket.find(element =>
+       (element.id === article._id && element.color === selectedColor));
     // console.log(alreadyInBasket)
 
         if (alreadyInBasket){
@@ -57,7 +58,6 @@ console.log(id);
 fetch(`http://localhost:3000/api/teddies/${id}`)
   .then(function (response) {
     console.log("FIN DE LA REQUETE");
-
     console.log(response);
     return response.json();
   })
@@ -72,7 +72,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     description = document.getElementById("description").innerText = article.description;
 
     let choixCouleur = document.querySelector("select");
-       
     
      for(let color of article.colors) {  
       choixCouleur.innerHTML +=`<option id="couleur" value="${color}">${color}</option>`;

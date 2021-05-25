@@ -1,11 +1,69 @@
+/*   style du corp de la page */
+
 *, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;    
-  }
-  body{
-    font-family: 'Roboto', sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;    
+}
+body {
+   font-family: 'Roboto', sans-serif;
+}
+
+.menu{
+display: flex;
+align-items: center;
+background: #F3E9F1;
+height: 60px;
+}
+.logo{
+  margin-right: auto; 
+  /* width: 150px; */
+  height: 60px;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+font-size: 18px;
+/* overflow: hidden; */
+/* background-color: #F3E9F1; */
+
+}
+
+li {
+ display:inline-block ;
+ 
+}
+
+li a {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ce9dc4;
+  color: rgb(255, 255, 255);
+  padding-top: 20px ;
+  padding-bottom:20px  ;
+}
+
+
+footer{
+  background: #F3E9F1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
+/*  fin de  style du corp de la page */
+ 
+
 .produitListe{
     margin-left: 100px;
     border: 2px solid black;

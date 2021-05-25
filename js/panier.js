@@ -1,3 +1,5 @@
+
+
 //récupération des données des produits du local storage 
 
 let produitEnregistreDansLocalStorage = JSON.parse(localStorage.getItem("basket"));
@@ -8,7 +10,7 @@ console.log(produitEnregistreDansLocalStorage)
 // fonction pour la Gestion du boutton supprimer l'article 
 
 const removeElementFromBasket = (id, color, name, quantity) => {
-     console.log("element supprimer");
+    console.log("element supprimer");
     console.log(id, color, name, quantity); 
         
     const basketWithoutRemovedElement = produitEnregistreDansLocalStorage.filter(
@@ -25,7 +27,9 @@ const removeElementFromBasket = (id, color, name, quantity) => {
                 console.log("le 2eme if");
                 elem.quantity = elem.quantity - 1; 
                 return elem.quantity;               
-            }            
+            } else{
+                return (elem.id !== id );
+            }           
                
         }else if(elem.id !== id){
             console.log("le else");
@@ -53,7 +57,7 @@ if (produitEnregistreDansLocalStorage){
 
     produitEnregistreDansLocalStorage.forEach(element => {
 
-       totalPrice = totalPrice + element.price * element.quantity; // le prix total de tous les articles
+       totalPrice = totalPrice + element.price * element.quantity; // le prix total de tous les articles 
 
         var DivProduit = document.createElement("div");
 
@@ -75,26 +79,33 @@ if (produitEnregistreDansLocalStorage){
          panierVide.appendChild(DivProduit); 
          panierVide.appendChild(deleteButton); 
 
+         //*************************** Gestion du boutton supprimer l'article ************************* 
+
           // Supression de l'article du local storage
+
           console.log("element.id, element.color");
           console.log(element.id, element.color,element.name, element.quantity);
 
           deleteButton.addEventListener("click", () =>{
-              console.log("apres le click");
+              console.log("apres le click sur le bouton deleteButton");
             //   console.log(removeElementFromBasket(element.id, element.color, element.quantity));
             removeElementFromBasket(element.id, element.color, element.name, element.quantity);
             console.log("element.id, element.color, element.quantity");
             console.log(element.id, element.color, element.name, element.quantity);
-          }        
+            
+          }     
          ); 
-
-        
+         
+ //*************************** Fin DE la Gestion du boutton supprimer l'article *************************  
+      
     });
-
+    
 
     var prixTotalPanier = document.createElement("p");
         prixTotalPanier.innerHTML = `<p id="prixTotal">Total de votre panier : ${totalPrice/100} € </p> `
         panierVide.appendChild(prixTotalPanier);
+        localStorage.setItem("totalPrice" , totalPrice/100); 
+
         
 
 
@@ -103,19 +114,11 @@ document.getElementById('panierVide').innerText = "Votre panier est vide";
 console.log('hello');
  }
 
- //*************************** Gestion du boutton supprimer l'article ************************* 
- 
  
 
 
 
-
-
- //*************************** Fin DE la Gestion du boutton supprimer l'article *************************  
-
-
-
-// ***************************************addEventListener pour le boutton "je valide mon panier et mes informations" formulaire***********************
+// ***************************************(écoute de la soumission du formulaire)addEventListener pour le boutton "je valide mon panier et mes informations" formulaire***********************
 const btnEnvoyerFormulaire = document.getElementById("envoiFormulaire");
 btnEnvoyerFormulaire.addEventListener("click", ()=>{
 // e.preventDefault(); // a enlever
@@ -127,11 +130,12 @@ const contact = {
     lastName : document.getElementById("nomUtilisateur").value,
     email : document.getElementById("mail").value,
     address : document.getElementById("adresse").value,
-    city : document.getElementById("ville").value,   
+    city : document.getElementById("ville").value,
+     
 };
 
 localStorage.setItem("contact", JSON.stringify(contact));
-
+// avec La méthode map() on a créer un nouveau tableau qui contien que les id des produits
 const products = produitEnregistreDansLocalStorage.map(
     (produit) => produit.id
 );
@@ -159,20 +163,36 @@ console.log(aEnvoyer);
 
 //  Envoie de l'objet 'aEnvoyer' vers le serveur
 
-    fetch("http://localhost:3000/api/teddies/order", {
+  let send = fetch("http://localhost:3000/api/teddies/order", {
     method: "POST",
+    headers: {
+        'Accept': "application/json",
+        "Content-Type" : "application/json",
+    },    
     body: JSON.stringify({ 
         products,
         contact
-     }),
-    headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-    },
-});
+     })
+})
+.then(function(res) {
+    if (res.ok) {
+      return res.json();
+    } 
+  })
+
+  .then(function(value) {
+     recupOrderId = value.orderId;      
+     console.log (recupOrderId );
+     localStorage.setItem("orderId", JSON.stringify(recupOrderId));
 
 
+}); 
+// return promise
+console.log(send);
+// chargelent de la page confirmation
+document.location.href = "confirmation.html";
 });
+
 
 // ************************mettre le contenu de la key 'contact' du local storage dans les champs du formulaire 
 // prendre  la key 'contact' du local storage est la mettre dans une variable
