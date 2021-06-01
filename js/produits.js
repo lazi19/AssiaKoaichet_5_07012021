@@ -1,100 +1,90 @@
+//  creation de la fonction ajouterAuPanier pour ajouter l'article au panier apres le clic sur le bouton
 
-// ******************************** le Local Storage ******************************* 
-// **** Stocker la récuperation des valeurs du formulaire dans le local storage **** 
-//  creation de la fonction ajouterAuPanier 
+const ajouterAuPanier = (article) => {
+  
+  alert("votre article a été ajouté au panier");
+  console.log("Ajouter au Panier");
 
- const ajouterAuPanier = (article) => {
+  //récupération de la valeur de l'option (couleur choisi par  l'utilisateur)
+  const selectElm = document.getElementById("couleurs");
+  const selectedColor = selectElm.value;
 
-      console.log('Ajouter au Panier')
-      const selectElm = document.getElementById("couleurs");
-      const selectedColor = selectElm.value;
-    //console.log(JSON.parse(localStorage.getItem("basket"))) // JSON.parse c'est pour convertir les données au format JSON qui sont dans le local storage en objet JavaScript
-    
-    const currentBasket = JSON.parse(localStorage.getItem("basket")) || [] ; 
+  // JSON.parse méthode pour convertir les données  format JSON (chaine de caractère) qui sont dans le local storage en objet JavaScript
 
-    console.log(currentBasket); 
-    
-    const alreadyInBasket = currentBasket.find(element =>
-       (element.id === article._id && element.color === selectedColor));
-    // console.log(alreadyInBasket)
+  const currentBasket = JSON.parse(localStorage.getItem("basket")) || [];
+  console.log(currentBasket);
+  //création de la const alreadyInBasket qui contient le produit séléctionner si il existe dans basket( avec meme id et la même couleur)
+  const alreadyInBasket = currentBasket.find(
+    (element) => element.id === article._id && element.color === selectedColor
+  );
+  // console.log(alreadyInBasket)
 
-        if (alreadyInBasket){
-          alreadyInBasket.quantity++;
-          console.log(alreadyInBasket)
-          console.log('okIf')
-        } else {
-              currentBasket.push({ 
-                    img: article.imageUrl,           
-                    id: article._id,
-                    name: article.name,
-                    color: selectedColor,
-                    price: article.price,
-                    quantity: 1
-              })
-        }
+  // si la const alreadyInBasket est true incrémente quantity
+  if (alreadyInBasket) {
+    alreadyInBasket.quantity++;
+    console.log(alreadyInBasket);
+  } else {
+    // sinon avec la méthode push  rajoute cet objet au tableau currentBasket
+    currentBasket.push({
+      img: article.imageUrl,
+      id: article._id,
+      name: article.name,
+      color: selectedColor,
+      price: article.price,
+      quantity: 1,
+    });
+  }
 
-        localStorage.setItem("basket", JSON.stringify(currentBasket));
-        console.log('helloElse') 
+  // **** Stocker les valeurs du produit séléctionner  dans le local storage ****
+  localStorage.setItem("basket", JSON.stringify(currentBasket));
 };
+//  Fin de la creation de la fonction ajouterAuPanier pour ajouter l'article au panier
 
- 
 /*
   Récupération  de l'id du produit à afficher dans l'url (récupération de la chaîne de requete dans l'URL)
  */
-const queryString_url_id = window.location.search;
+const queryString_url_id = window.location.search; //L'objets Location est une méthode toString renvoyant l'URL courante et search renvoi La partie de l'URL qui suit le symbole « ? », avec ce symbole inclus
 console.log(queryString_url_id);
-
 
 //  extraire l' id  en utilisant un constructeur
 
-const urlSearchParams = new URLSearchParams(queryString_url_id);
+const urlSearchParams = new URLSearchParams(queryString_url_id); //utiliser URLSearchParams pour interroger l'URL
 console.log(urlSearchParams);
 
-const id = urlSearchParams.get("id");
+const id = urlSearchParams.get("id"); //récupèration  de la valeur associée au paramètre id
 console.log(id);
 
-//  affichage du produit (de l'objet) qui a été selectionné par l'id
+//requête http vers l'élément correspondant à l'id donné
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
   .then(function (response) {
-    console.log("FIN DE LA REQUETE");
     console.log(response);
     return response.json();
   })
-
+  //  affichage de l'article qui a été selectionné par l'id dans la page produits
   .then(function (article) {
     console.log(article);
-
-    //  Sélection des elements  ou je vais (injecter)  changer leur  code HTML
-
+    //  Sélection des elements  ou je vais (injecter)  HTML
     document.getElementById("img").src = article.imageUrl;
     document.getElementById("nom").innerText = article.name;
-    description = document.getElementById("description").innerText = article.description;
+    description = document.getElementById("description").innerText =
+      article.description;
+    prix = document.getElementById("prix").innerText =
+      "Prix : " + article.price / 100 + " € ";
 
+    //création des options couleurs
     let choixCouleur = document.querySelector("select");
-    
-     for(let color of article.colors) {  
-      choixCouleur.innerHTML +=`<option id="couleur" value="${color}">${color}</option>`;
-      
+    for (let color of article.colors) {
+      choixCouleur.innerHTML += `<option id="couleur" value="${color}">${color}</option>`;
     }
-
-    prix = document.getElementById("prix").innerText = "Prix : " + article.price / 100 + " € ";
+    //Fin création des options couleurs
 
     // ecouter l'evenement du clic sur le bouton Ajouter au panier
 
-    document.getElementById("btn_panier").onclick = () => ajouterAuPanier(article); // fonction fléchée
-
-    // document.getElementById("btn_panier").onclick = ajouterAuPanier(article); // la fonction normale 
-
+    document.getElementById("btn_panier").onclick = () =>
+      ajouterAuPanier(article);
   })
 
   .catch(function (err) {
     alert(err);
   });
-
-
-  
-
-  
-
-

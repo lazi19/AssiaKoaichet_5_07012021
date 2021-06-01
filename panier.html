@@ -26,8 +26,7 @@
              <nav class="">
                      <ul>
                          <li ><a class = "" href="index.html"> Accueil </a></li>
-                         <li><a class = "activite" href = ""> Contact</a></li>
-                         <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-basket"></i> Panier</a></li>
+                         <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-cart"></i> </a></li>
                      </ul>
              </nav>
  
@@ -36,65 +35,68 @@
      </header>
 
     <main>
-        
-        <div id="basket-resume">
-			<p id="panierVide"></p>
-            <!-- <div class="blocProduit">
-                <img src="" alt="">
-                <p id="nom"></p>
-                <p id="quantite">Quantité : </p>
-                <p id="couleur">Couleur :</p>
-                <p id="prix">Prix :</p>
-                <button>suprimer</button>
-                <p id="prixTotal">Total de votre panier : </p>
-                <button>Continuer mes achats</button>
-            </div> -->
-            <!-- <p id="prixTotal">Total de votre panier : ${prixTotalPanier} € </p> -->
-		</div>
-        <a href="index.html"><button> CONTINUER MES ACHATS </button></a> 
-
-      
-
-       <form onsubmit="return false" name="form-panier">  <!-- le onsubmit bloque le rechargement de la page lors de l'envoie du form -->
-            <fieldset>
-                <legend>Civilité</legend>
-
-                <div class="formPrenom">
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" value="" required placeholder="De 3 à 20 caractères"><br><br>
-                </div>   
-
-                <div class="formNom">
-                    <label for="nomUtilisateur">Nom :</label>
-                    <input type="text" id="nomUtilisateur" name="nomUtilisateur" value="" required placeholder="De 3 à 20 caractères">
-                </div> 
-                
-            </fieldset>
-
-            <fieldset>
-                <legend>Coordonnées</legend>
-
-                <div class="formMail">
-                     <label for="mail">E-mail :</label>
-                     <input type="email" id="mail" name="mail" required  placeholder="mail@serveur.com"><br><br>
+        <h2>Finalisation de votre commande</h2>
+            <h3>Pannier</h3>
+                <div id="basket-resume">
+                    <p id="panierVide"></p>
+                    <!-- <div class="blocProduit">
+                        <img src="" alt="">
+                        <p id="nom"></p>
+                        <p id="quantite">Quantité : </p>
+                        <p id="couleur">Couleur :</p>
+                        <p id="prix">Prix :</p>
+                        <button>Supprimer</button>
+                        <p id="prixTotal">Total de votre panier : </p>
+                        <button>Continuer mes achats</button>
+                    </div> -->
+                    <!-- <p id="prixTotal">Total de votre panier : ${prixTotalPanier} € </p> -->
                 </div>
-               
-                <div class="formAdresse">
-                    <label for="adresse">Adresse :</label>
-                    <input type="text" id="adresse" name="adresse" required><br><br>
-                </div> 
-                <div class="formVille">
-                    <label for="ville">Ville :</label>
-                    <input type="text" id="ville" class="form-control input-control" required name="ville"><br><br>
+                <div  class="btn_continuerAchats">
+                     <a href="index.html"><button> CONTINUER MES ACHATS </button></a> 
+
                 </div>
 
-                
-            </fieldset>
+            
+            <h3>Vos coordonnées</h3>
+                <form id="formOrder" name="form-panier">  <!-- le onsubmit bloque le rechargement de la page lors de l'envoie du form -->
+                        <fieldset>
+                            <legend> Civilité</legend>
 
-              
-                <input type="submit" value="Je valide mon panier et mes informations" class="" id="envoiFormulaire">
-                
-        </form>
+                            <div class="formPrenom">
+                                <label for="prenom">Prénom :</label>
+                                <input type="text" id="prenom" name="prenom" value="" required placeholder="Votre Prénom"><br><br>
+                            </div>   
+
+                            <div class="formNom">
+                                <label for="nomUtilisateur">Nom :</label>
+                                <input type="text" id="nomUtilisateur" name="nomUtilisateur" value="" required placeholder="Votre Nom">
+                            </div> 
+                            
+                        </fieldset>
+
+                        <fieldset>
+                            <legend> Coordonnées</legend>
+
+                            <div class="formMail">
+                                <label for="mail">E-mail :</label>
+                                <input type="email" id="mail" name="mail" required  placeholder="mail@serveur.com"><br><br>
+                            </div>
+                        
+                            <div class="formAdresse">
+                                <label for="adresse">Adresse :</label>
+                                <input type="text" id="adresse" name="adresse" required placeholder="Votre Adresse"><br><br>
+                            </div> 
+                            <div class="formVille">
+                                <label for="ville">Ville :</label>
+                                <input type="text" id="ville" class="form-control input-control" required name="ville" placeholder="Votre Ville"><br><br>
+                            </div>
+                                  
+                        </fieldset>
+
+                        
+                            <input type="submit" value="Je valide mon panier et mes informations" class="envoiFormulaire" id="envoiFormulaire">
+
+                    </form>
 
 
 		

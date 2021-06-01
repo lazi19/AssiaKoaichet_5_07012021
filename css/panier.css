@@ -17,23 +17,18 @@ height: 60px;
 }
 .logo{
   margin-right: auto; 
-  /* width: 150px; */
   height: 60px;
 }
-
 ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-font-size: 18px;
-/* overflow: hidden; */
-/* background-color: #F3E9F1; */
-
-}
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  
+  }
 
 li {
  display:inline-block ;
- 
 }
 
 li a {
@@ -45,25 +40,200 @@ li a {
 
 li a:hover {
   background-color: #ce9dc4;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   padding-top: 20px ;
   padding-bottom:20px  ;
 }
-
-
 footer{
   background: #F3E9F1;
   padding: 20px;
   text-align: center;
 }
+/*********************************  fin de  style du corp de la page */
 
+main{
+  margin:  5% 10%;
+  max-width: 90%;
+  /* text-align: center; */
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+h3{
+  margin: 15px;
+}
+ 
+.blocProduit_text{
+  min-width: 300px;
+  /* background: #e63ac3; */
+  font-size: 14px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin-left: 10px; 
+}
+.blocProduit_text p{
+  padding-bottom: 5px;
+}
 
+.blocProduit{
+  background: #F3E9F1;
+  display: flex;
+  margin-bottom: 20px ;
+  /* min-height: 148px; */
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+}
 
+#prixTotal{
+   margin: 20px;
+   padding: 10px;
+  background: #F3E9F1;
+  text-align: end;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+}
+.btnSupprimer{
+  display: inline-block;
+  /* color: white; */
+  /* background:lightslategray; */
+  /* background: linear-gradient(0.45turn, #778899, #ce9dc4); */
+  padding: 5px 10px;
+  /* border-radius: 10px; */
+  transform: scale(1);
+  transition: transform 0.3s;
+  margin: 5px;
+  /* border: 1px solid #cccccc; */
+  cursor: pointer;
+  /* box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%); */
+  position: relative;
+  bottom: 60px;
+  left: 85%;  
+  border: none;
+}
 
+.btnSupprimer:hover {
+  transform: scale(1.1);
+}
+.btn_continuerAchats{
+  /* display: flex; */
+  margin: 20px;
+  padding: 10px;
+ background: #F3E9F1;
+ text-align: center;
+ box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+ box-shadow: 0px 0px 9px 0px rgb(50 50 50 / 20%);
+ cursor: pointer;
+}
+.btn_continuerAchats:hover{
+  box-shadow: 0px 0px 9px 0px rgb(50 50 50 / 50%);
 
-/*  fin de  style du corp de la page */
-
+}
+.btn_continuerAchats button{
+  /* display: inline-block; */
+  border: none;
+  cursor: pointer;
+}
 
 fieldset {
-    background-color: #eeeeee;
+  max-width: 100% ;
+  background-color: #F3E9F1;
+  border: 1px solid #999;
+  padding: 3% 0;
+  margin: 5px 0 ;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
   }
+  form {
+    margin: 20px;
+    max-width: 100% ;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  }
+  form label {
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+    display: inline-block;
+    /* width: 90px; */
+    text-align: right;
+
+    background: #eee;
+  /* border-right: 1px solid #bbb; */
+  /* width: 20%; */
+  min-width: 110px;
+  text-align: center;
+  }
+  form input[type="submit"]{
+    margin-left: 0px;
+    font-size: 14px ;
+    
+  }
+  form input {
+    width: 70%;
+    /* box-sizing: border-box; */
+    /* border: 1px solid #F3E9F1; */
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    margin-left: 10px;
+  }
+  /* form input:focus {
+  background: #ce9dc4;   
+   
+  } */
+  .envoiFormulaire {
+   background: #F3E9F1;
+   text-align: center;
+   box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+   width: 100%;
+   border: 1px solid #999;
+   padding: 10px 0;
+   cursor: pointer;
+   transition: transform 0.3s; 
+    }
+  .envoiFormulaire:hover{
+    transform: scale(1.01);
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 50%);
+  }
+  .envoiFormulaireResponsive{
+    display: none;
+  }
+
+  .box-shadow{
+     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    }
+ 
+    @media screen and (max-width: 600px){
+      .blocProduit{    
+      display:flex;
+      /* flex-direction: column; */
+      margin-bottom: 20px ;
+    }
+    .blocProduit img {
+      max-width: 150px;
+    }
+    .blocProduit_text{
+      width: 100px;
+      /* background: #e63ac3; */
+     
+      display: flex;
+      flex-direction: column;
+      /* justify-content: baseline; */
+      align-items: flex-start;
+        
+    }
+    form input[type="submit"]{
+      margin-left: 0px;
+      font-size: 12px ;
+      
+    }
+    }
+    
+   
+    
+  
+  
+
+
+ 

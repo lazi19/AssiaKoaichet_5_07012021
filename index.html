@@ -20,12 +20,23 @@
                  <a href="index.html"> <img class="logo" src="img\logoOrinoco.png" alt="Logo de orinoco " /> </a>
              </h1>                        
  
-             <nav class="">
-                     <ul>
-                         <li ><a class = "" href="index.html"> Accueil </a></li>
-                         <li><a class = "activite" href = ""> Contact</a></li>
-                         <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-basket"></i> Panier</a></li>
-                     </ul>
+             <nav >
+                    <div id="topNav" class="topNav" >
+                        <ul>
+                            <button  class="icon_nav_toggle" ><i class="fas fa-times"></i></button>
+                            <!-- <span onclick="closeSidebar()" class="">X</span>                                    -->
+                           
+                            <li><a class = "" href="index.html"> Accueil </a></li>
+                            <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-cart"></i> Panier</a></li>          
+                        </ul>
+                    </div> 
+                
+                    <div class="nav_toggle">                    
+                            <button  class="icon_nav_toggle" ><i class="fa fa-bars"></i></button>
+                            <!-- <button  class="icon_nav_toggle" onclick="openSidebar()"><i class="fa fa-bars"></i></button> -->
+
+                        </div>     
+               
              </nav>
  
         </div> 
@@ -40,6 +51,19 @@
     <footer>
 <p>Orinoco -  Site e-commerce - P5 openclassrooms</p>
     </footer>
+<!-- 
+    <script>
+        closeSidebar();
+        function openSidebar() {
+        document.getElementById("topNav").style.display = "block";
+        }
+
+        function closeSidebar() {
+        document.getElementById("topNav").style.display = "none";
+        }
+
+    </script> -->
+
     <script src="https://kit.fontawesome.com/1d97153c91.js" crossorigin="anonymous"></script>
     <script src="js\main.js"></script> 
     <!-- <script src="js\produits.js"></script>    -->

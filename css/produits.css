@@ -25,7 +25,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
   /* overflow: hidden; */
   /* background-color: #F3E9F1; */
   
@@ -46,8 +46,8 @@
   li a:hover {
     background-color: #ce9dc4;
     color: rgb(255, 255, 255);
-    padding-top: 20px ;
-    padding-bottom:20px  ;
+    padding-top: 10px ;
+    padding-bottom:10px  ;
   }
   
   
@@ -56,33 +56,85 @@
     padding: 20px;
     text-align: center;
   }
-  
-  
-  
-  
-  
   /*  fin de  style du corp de la page */ 
 
 .produit{
-    display: flex;
-    flex-wrap: wrap;
-    border : 1px solid black;
-}
-.image_produit{
-    width: 400px; 
-}
-
-.teddy{
-    width: 380px;
-    object-fit: cover; 
-    overflow: hidden;
-    border-right: 1px solid black;
-    
+  /* width: 100%; */
+  height: 300px;
+  margin : 100px 50px;
+  background: rgba(182, 157, 157, 0.10 );
+  box-shadow:0px 0px 9px 0px rgba(50, 50, 50, 0.10);
+  display: flex;
+  justify-content:center;
+  flex-direction: row;
+  /* border : 1px solid rgb(216, 14, 14); */
 }
 
 .description_produit{
-   
-    padding-left: 10px;
-    
-    
+  /* background: rgb(102, 66, 233); */
+  /* border: 1px solid black; */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+.nom{
+  font-size: 20px ;
+}
+.prix{
+  padding: 10px 0;
+}
+.formCouleurs {
+  display: flex;
+  flex-direction: column;
+}
+.formCouleurs label{
+  margin-bottom: -15px;
+}
+.couleurs{
+  font:  15px Roboto;
+   border-radius: 5px;
+  padding: 8px 20px;
+  }
+.btn_AjouPanierRetourAccueil{
+  display: flex;
+  flex-direction: row;
+}
+
+#btn_panier, .link-retourAccueil{
+  font:  15px Roboto;
+  border-radius: 5px;
+  /* padding: 8px 20px; */
+  background: #ce9dc4;
+  color: white;
+  margin-top: 5px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 9px 0px rgb(50 50 50 / 20%);
+}
+#btn_panier:hover, .link-retourAccueil:hover {
+  /* opacity:0.90; */
+  box-shadow: 0px 0px 9px 0px rgb(50 50 50 / 50%);
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.link-retourAccueil {
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  margin-top:  10px;
+}
+.image_produit{
+  /* background: rgb(99, 27, 27); */
+  overflow: hidden;
+}
+.teddy{
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
