@@ -1,7 +1,6 @@
 //  creation de la fonction ajouterAuPanier pour ajouter l'article au panier apres le clic sur le bouton
 
 const ajouterAuPanier = (article) => {
-  
   alert("votre article a été ajouté au panier");
   console.log("Ajouter au Panier");
 
@@ -33,15 +32,16 @@ const ajouterAuPanier = (article) => {
       price: article.price,
       quantity: 1,
     });
+    console.log(currentBasket);
   }
 
   // **** Stocker les valeurs du produit séléctionner  dans le local storage ****
   localStorage.setItem("basket", JSON.stringify(currentBasket));
 };
-//  Fin de la creation de la fonction ajouterAuPanier pour ajouter l'article au panier
+//  Fin de la création de la fonction ajouterAuPanier pour ajouter l'article au panier
 
 /*
-  Récupération  de l'id du produit à afficher dans l'url (récupération de la chaîne de requete dans l'URL)
+  Récupération  de l'id du produit sélectionné de l'url (récupération de la chaîne de requete dans l'URL)
  */
 const queryString_url_id = window.location.search; //L'objets Location est une méthode toString renvoyant l'URL courante et search renvoi La partie de l'URL qui suit le symbole « ? », avec ce symbole inclus
 console.log(queryString_url_id);
@@ -54,7 +54,7 @@ console.log(urlSearchParams);
 const id = urlSearchParams.get("id"); //récupèration  de la valeur associée au paramètre id
 console.log(id);
 
-//requête http vers l'élément correspondant à l'id donné
+//requête http vers le produit correspondant à l'id donné
 
 fetch(`http://localhost:3000/api/teddies/${id}`)
   .then(function (response) {
@@ -67,10 +67,8 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     //  Sélection des elements  ou je vais (injecter)  HTML
     document.getElementById("img").src = article.imageUrl;
     document.getElementById("nom").innerText = article.name;
-    description = document.getElementById("description").innerText =
-      article.description;
-    prix = document.getElementById("prix").innerText =
-      "Prix : " + article.price / 100 + " € ";
+    document.getElementById("description").innerText = article.description;
+    document.getElementById("prix").innerText = "Prix : " + article.price / 100 + " € ";
 
     //création des options couleurs
     let choixCouleur = document.querySelector("select");

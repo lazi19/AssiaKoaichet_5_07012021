@@ -1,85 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\produits.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/produits.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
 
     <title>ORINOCO - Produit</title>
-    <meta name="description" content="ORINOCO - Découvrez nos jolis ours en peluche faits à la main ! ">
-
-</head>
-<body>
+    <meta
+      name="description"
+      content="ORINOCO - Découvrez nos jolis ours en peluche faits à la main ! "
+    />
+  </head>
+  <body>
     <header>
-        <div class="menu">
- 
-             <h1 class="logo">
-                 <a href="index.html"> <img class="logo" src="img\logoOrinoco.png" alt="Logo de orinoco " /> </a>
-             </h1>                        
- 
-             <nav class="">
-                     <ul>
-                         <li ><a class = "" href="index.html"> Accueil </a></li>
-                         <li><a class = "activite" href = ""> Contact</a></li>
-                         <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-cart"></i> Panier</a></li>
-                     </ul>
-             </nav>
- 
-        </div> 
-         
-     </header>
+      <div class="menu">
+        <h1 class="logo">
+          <a href="index.html">
+            <img
+              class="logo"
+              src="img/logoOrinoco.png"
+              alt="Logo de orinoco "
+            />
+          </a>
+        </h1>
+
+        <nav class="">
+          <ul>
+            <li><a class="" href="index.html"> Accueil </a></li>
+            <li>
+              <a class="activite" href="panier.html"
+                ><i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-        
-      
-        <div id="produit" class="produit">
-                
-                <div class="image_produit">
-                    <img id="img" src="" alt="peluche ours" class="teddy" width="">
-                </div>
-
-                <div class="description_produit">
-
-                        <h2 id="nom" class="nom">Nom</h2>
-
-                        <p id="description">description</p>
-                        <p id="prix" class="bold prix">Prix :  2900 €</p>
-                        <form>
-                            <div class="formCouleurs">
-                                <label for="couleurs">Choisissez une couleur</label><br>
-                                <select id="couleurs" class="couleurs" name="couleurs" >                                
-                                    
-                                    <!-- <option id="couleur" value="color"></option> -->
-                                
-                                </select>  
-                            </div>
-                        </form>                        
-                        
-                        <!-- <p id="id"></p> -->
-                        
-                        <button type="submit" id="btn_panier" name="btn_panier" >
-                            <span>Ajouter au panier <i class="fas fa-shopping-cart"></i></span> 
-                        </button>
-
-                        <a href="index.html" class="link-retourAccueil">
-                            <div class="btn-retourAccueil"><i class="fas fa-undo"></i> Retour à l'accueil</div>
-                        </a>
-
-                        <!-- <div id="basket"></div> -->
-
-                </div>
+      <div id="produit" class="produit">
+        <div class="image_produit">
+          <img id="img" src="article.imageUrl" alt="peluche ours" class="teddy" />
         </div>
-        
 
+        <div class="description_produit">
+          <h2 id="nom" class="nom">Nom</h2>
+
+          <p id="description">description</p>
+          <p id="prix" class="bold prix">Prix : 2900 €</p>
+          <form>
+            <div class="formCouleurs">
+              <label for="couleurs">Choisissez une couleur</label><br />
+              <select id="couleurs" class="couleurs" name="couleurs">
+                <!-- <option id="couleur" value="color"></option> -->
+              </select>
+            </div>
+          </form>
+
+          <!-- <p id="id"></p> -->
+
+          <button type="submit" id="btn_panier" name="btn_panier">
+            <span>Ajouter au panier <i class="fas fa-shopping-cart"></i></span>
+          </button>
+
+          <a href="index.html" class="link-retourAccueil">
+            <div class="btn-retourAccueil">
+              <i class="fas fa-undo"></i> Retour à l'accueil
+            </div>
+          </a>
+
+          <!-- <div id="basket"></div> -->
+        </div>
+      </div>
     </main>
     <footer>
-        <p>Orinoco -  Site e-commerce - P5 openclassrooms</p> 
+      <p>Orinoco - Site e-commerce - P5 openclassrooms</p>
     </footer>
-    <script src="https://kit.fontawesome.com/1d97153c91.js" crossorigin="anonymous"></script>
-    <script src="js\produits.js"></script>   
+    <script
+      src="https://kit.fontawesome.com/1d97153c91.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/produits.js"></script>
     <!-- <script src="js\main.js"></script> -->
-</body>
+  </body>
 </html>

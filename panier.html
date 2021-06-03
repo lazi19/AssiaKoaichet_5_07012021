@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/panier.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/panier.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>ORINOCO / Panier</title>
-    <meta name="description" content="ORINOCO - Site de vente en ligne d'ours en peluche">
-
-</head>
-<body>
+    <meta
+      name="description"
+      content="ORINOCO - Site de vente en ligne d'ours en peluche"
+    />
+  </head>
+  <body>
     <header>
-        <div class="menu">
- 
-             <h1 class="logo">
-                 <a href="index.html"> <img class="logo" src="img/logoOrinoco.png" alt="Logo de orinoco " /> </a>
-             </h1>                        
- 
-             <nav class="">
-                     <ul>
-                         <li ><a class = "" href="index.html"> Accueil </a></li>
-                         <li><a class = "activite" href = "panier.html"><i class="fas fa-shopping-cart"></i> </a></li>
-                     </ul>
-             </nav>
- 
-        </div> 
-         
-     </header>
+      <div class="menu">
+        <h1 class="logo">
+          <a href="index.html">
+            <img
+              class="logo"
+              src="img/logoOrinoco.png"
+              alt="Logo de orinoco "
+            />
+          </a>
+        </h1>
+
+        <nav class="">
+          <ul>
+            <li><a class="" href="index.html"> Accueil </a></li>
+            <li>
+              <a class="activite" href="panier.html"
+                ><i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-        <h2>Finalisation de votre commande</h2>
-            <h3>Pannier</h3>
-                <div id="basket-resume">
-                    <p id="panierVide"></p>
-                    <!-- <div class="blocProduit">
+      <h2>Finalisation de votre commande</h2>
+      <h3>Pannier</h3>
+      <div id="basket-resume">
+        <p id="panierVide"></p>
+        <!-- <div class="blocProduit">
                         <img src="" alt="">
                         <p id="nom"></p>
                         <p id="quantite">Quantité : </p>
@@ -49,64 +62,96 @@
                         <p id="prixTotal">Total de votre panier : </p>
                         <button>Continuer mes achats</button>
                     </div> -->
-                    <!-- <p id="prixTotal">Total de votre panier : ${prixTotalPanier} € </p> -->
-                </div>
-                <div  class="btn_continuerAchats">
-                     <a href="index.html"><button> CONTINUER MES ACHATS </button></a> 
+        <!-- <p id="prixTotal">Total de votre panier : ${prixTotalPanier} € </p> -->
+      </div>
+      <div class="btn_continuerAchats">
+        <a href="index.html"><span>CONTINUER MES ACHATS</span></a>
+      </div>
 
-                </div>
+      <h3>Vos coordonnées</h3>
+      <form id="formOrder" name="form-panier">
+        <!-- le onsubmit bloque le rechargement de la page lors de l'envoie du form -->
+        <fieldset>
+          <legend>Civilité</legend>
 
-            
-            <h3>Vos coordonnées</h3>
-                <form id="formOrder" name="form-panier">  <!-- le onsubmit bloque le rechargement de la page lors de l'envoie du form -->
-                        <fieldset>
-                            <legend> Civilité</legend>
+          <div class="formPrenom">
+            <label for="prenom">Prénom :</label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              value=""
+              required
+              placeholder="Votre Prénom"
+            /><br /><br />
+          </div>
 
-                            <div class="formPrenom">
-                                <label for="prenom">Prénom :</label>
-                                <input type="text" id="prenom" name="prenom" value="" required placeholder="Votre Prénom"><br><br>
-                            </div>   
+          <div class="formNom">
+            <label for="nomUtilisateur">Nom :</label>
+            <input
+              type="text"
+              id="nomUtilisateur"
+              name="nomUtilisateur"
+              value=""
+              required
+              placeholder="Votre Nom"
+            />
+          </div>
+        </fieldset>
 
-                            <div class="formNom">
-                                <label for="nomUtilisateur">Nom :</label>
-                                <input type="text" id="nomUtilisateur" name="nomUtilisateur" value="" required placeholder="Votre Nom">
-                            </div> 
-                            
-                        </fieldset>
+        <fieldset>
+          <legend>Coordonnées</legend>
 
-                        <fieldset>
-                            <legend> Coordonnées</legend>
+          <div class="formMail">
+            <label for="mail">E-mail :</label>
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              required
+              placeholder="mail@serveur.com"
+            /><br /><br />
+          </div>
 
-                            <div class="formMail">
-                                <label for="mail">E-mail :</label>
-                                <input type="email" id="mail" name="mail" required  placeholder="mail@serveur.com"><br><br>
-                            </div>
-                        
-                            <div class="formAdresse">
-                                <label for="adresse">Adresse :</label>
-                                <input type="text" id="adresse" name="adresse" required placeholder="Votre Adresse"><br><br>
-                            </div> 
-                            <div class="formVille">
-                                <label for="ville">Ville :</label>
-                                <input type="text" id="ville" class="form-control input-control" required name="ville" placeholder="Votre Ville"><br><br>
-                            </div>
-                                  
-                        </fieldset>
+          <div class="formAdresse">
+            <label for="adresse">Adresse :</label>
+            <input
+              type="text"
+              id="adresse"
+              name="adresse"
+              required
+              placeholder="Votre Adresse"
+            /><br /><br />
+          </div>
+          <div class="formVille">
+            <label for="ville">Ville :</label>
+            <input
+              type="text"
+              id="ville"
+              class="form-control input-control"
+              required
+              name="ville"
+              placeholder="Votre Ville"
+            /><br /><br />
+          </div>
+        </fieldset>
 
-                        
-                            <input type="submit" value="Je valide mon panier et mes informations" class="envoiFormulaire" id="envoiFormulaire">
-
-                    </form>
-
-
-		
-
+        <input
+          type="submit"
+          value="Je valide mon panier et mes informations"
+          class="envoiFormulaire"
+          id="envoiFormulaire"
+        />
+      </form>
     </main>
     <footer>
-        <p>Orinoco -  Site e-commerce - P5 openclassrooms</p>
+      <p>Orinoco - Site e-commerce - P5 openclassrooms</p>
     </footer>
-    <script src="https://kit.fontawesome.com/1d97153c91.js" crossorigin="anonymous"></script>
-    <script src="js/panier.js "></script> 
+    <script
+      src="https://kit.fontawesome.com/1d97153c91.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/panier.js "></script>
     <!-- <script src="js\produits.js"></script>    -->
-</body>
+  </body>
 </html>

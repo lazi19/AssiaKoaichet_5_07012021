@@ -9,7 +9,7 @@ fetch("http://localhost:3000/api/teddies")
                                // qui est le résultat de l'analyse du corps de texte en JSON (donc malgré le nom de la méthode json() le résultat n'est pas JSON mais est plutôt un objet JavaScript 
   })
 
-  .then(function (articles) {
+  .then(function getArticles (articles) {
     console.log(articles);
 //affichage de chaque produit sous forme de liste avec la boucle forEach
 
@@ -35,8 +35,9 @@ fetch("http://localhost:3000/api/teddies")
             </div> `;
 
       console.log(divProduitListe);
-      divProduitListe.appendChild(DivProduit); // rajouter le contenu de la variable  DivProduit dans la variable divProduitListe au HTML
+      divProduitListe.appendChild(DivProduit); // rajouter le contenu de la variable  DivProduit dans la variable divProduitListe dans HTML
     });
+   
   })
 
   .catch(function (err) {

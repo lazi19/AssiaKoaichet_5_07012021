@@ -1,37 +1,29 @@
 /*   style du corp de la page */
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;    
+  padding: 0;
 }
 body {
-   font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.menu{
-display: flex;
-align-items: center;
-background: #F3E9F1;
-height: 60px;
+.menu {
+  display: flex;
+  align-items: center;
+  background: #f3e9f1;
+  height: 60px;
 }
-.logo{
-  margin-right: auto; 
+.logo {
+  margin-right: auto;
   /* width: 150px; */
   height: 60px;
 }
-nav{
- display: flex; 
- 
-}
-.nav_toggle{
-  display: none;
- 
-}
-.icon_nav_toggle{
-  cursor: pointer;
-  border: none;
-  font-size: 20px;
+nav {
+  display: flex;
 }
 
 ul {
@@ -39,14 +31,10 @@ ul {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  /* overflow: hidden; */
-  /* background-color: #F3E9F1; */
-  
-  }
+}
 
 li {
- display:inline-block ;
- 
+  display: inline-block;
 }
 
 li a {
@@ -57,90 +45,67 @@ li a {
 }
 
 li a:hover {
-  
   background-color: #ce9dc4;
   color: rgb(255, 255, 255);
-  padding-top: 10px ;
-  padding-bottom:10px  ;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-
-footer{
-  background: #F3E9F1;
+footer {
+  background: #f3e9f1;
   padding: 20px;
   text-align: center;
 }
 
 
-@media (max-width: 450px) {
-  .nav_toggle{
-    display: block;
-    position: absolute;
-    right: 10%;
-    top: 3%;
-  }
-    .topNav{
-     display: none; 
-    }
- }
-
-
-
-
-
 /*  fin de  style du corp de la page */
- 
 
-.produitListe{
-    /* margin-left: 100px; */
-    /* border: 2px solid black; */
-    /* background-color: rgb(214, 60, 60) ; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
+.produitListe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.carteProduit{
+.carteProduit {
   position: relative;
   width: 250px;
   height: 300px;
   margin: 30px 5px;
-  background:#F3E9F1;
-  border: solid #F3E9F1 2px ;
-  box-shadow:0px 0px 9px 0px rgba(50, 50, 50, 0.10);
+  background: #f3e9f1;
+  border: solid #f3e9f1 2px;
+  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:flex-start;  
-  flex-wrap: wrap; 
+  justify-content: flex-start;
+  flex-wrap: wrap;
   overflow: hidden;
-  transition: transform 0.2s ;
+  transition: transform 0.2s;
 }
 
-.carteProduit:hover{
+.carteProduit:hover {
   transform: scale(1.02);
 }
 
-.carteProduit h2{
+.carteProduit h2 {
   font-size: 20px;
 }
 
-.div_img{
-  width: 250px ;
+.div_img {
+  width: 250px;
   height: 150px;
   overflow: hidden;
-
 }
 
-.img{
-   object-fit: cover;    
-   width: 250px;
+.img {
+  object-fit: cover;
+  width: 250px;
 }
-.textProduit{
+.textProduit {
   height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 .textProduit a {
   text-decoration: none;

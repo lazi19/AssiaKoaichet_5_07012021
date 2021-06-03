@@ -11,3 +11,4 @@ let totalPrice = JSON.parse(localStorage.getItem("totalPrice")) || [];
 document.getElementById("firstName").innerHTML = `bonjour ${firstName.firstName}.`;
 document.getElementById("orderId").innerHTML = `N° de commande : ${orderId}`;
 document.getElementById("total").innerHTML = `Prix total TTC : ${totalPrice} €`;
+localStorage.clear();

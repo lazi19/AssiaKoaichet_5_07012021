@@ -4,6 +4,8 @@ let produitEnregistreDansLocalStorage = JSON.parse(
   localStorage.getItem("basket")
 );
 
+//declaration de la variable panierVIde
+let panierVide = document.getElementById("panierVide");
 // fonction pour la Gestion du boutton supprimer l'article
 
 const removeElementFromBasket = (id, color, name, quantity) => {
@@ -12,20 +14,18 @@ const removeElementFromBasket = (id, color, name, quantity) => {
       if (elem.id === id && elem.color === color) {
         if (elem.quantity > 1) {
           elem.quantity = elem.quantity - 1;
-          return elem.quantity;
+          // return elem.quantity;
+          return true;
         } else {
-          //  return false;
-          return elem.id !== id && elem.color !== color;
+          return false;
         }
       } else {
-        // return (elem.id !== id );
+        // return (elem);
         return true;
       }
     }
   );
 
-  // console.log("basketWithoutRemovedElement");
-  // console.log(basketWithoutRemovedElement);
   localStorage.setItem("basket", JSON.stringify(basketWithoutRemovedElement));
   console.log(basketWithoutRemovedElement);
   document.location.reload();
@@ -106,7 +106,10 @@ btnEnvoyerFormulaire.addEventListener("submit", (e) => {
 
   let totalPrice = JSON.parse(localStorage.getItem("totalPrice"));
 
-  if (totalPrice !== 0) {
+  if (
+    produitEnregistreDansLocalStorage &&
+    produitEnregistreDansLocalStorage.length > 0
+  ) {
     //*****************************************récuperation des valeurs du formulaire de commande pour les mettre dans le local storage*********************************************/
     const contact = {
       firstName: document.getElementById("prenom").value,
@@ -152,7 +155,7 @@ btnEnvoyerFormulaire.addEventListener("submit", (e) => {
     document.location.href = "confirmation.html";
   } else {
     // injection de l'HTML  Votre panier est vide
-    document.getElementById("panierVide").style.color = "red";
-    document.getElementById("panierVide").innerText = "Votre panier est vide";
+    panierVide.style.color = "red";
+    panierVide.innerText = "Votre panier est vide";
   }
 });
