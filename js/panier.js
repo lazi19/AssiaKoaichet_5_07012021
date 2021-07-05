@@ -64,8 +64,6 @@ if (produitEnregistreDansLocalStorage) {
     deleteButton.innerHTML = ` <i class="fas fa-trash"></i> `;
     deleteButton.classList.add("btnSupprimer");
 
-    //question concernant panierVide je n'ai pas déclaré cette variable  document.getElementById('panierVide').appendChild(DivProduit);
-
     panierVide.appendChild(DivProduit);
     //  panierVide.appendChild(deleteButton);
     DivProduit.appendChild(deleteButton);
@@ -101,10 +99,9 @@ if (produitEnregistreDansLocalStorage) {
 // ***************************************(écoute de la soumission du formulaire)addEventListener pour le boutton "je valide mon panier et mes informations" ***********************
 
 const btnEnvoyerFormulaire = document.getElementById("formOrder");
+
 btnEnvoyerFormulaire.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  let totalPrice = JSON.parse(localStorage.getItem("totalPrice"));
 
   if (
     produitEnregistreDansLocalStorage &&
